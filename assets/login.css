@@ -1,0 +1,120 @@
+body {
+  background: #d6f5ff;
+  max-height: 100vh;
+}
+
+.main-container {
+  width: 100%;
+  max-height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-areas:
+    "login logo logo"
+    "login logo logo"
+    "login logo logo";
+}
+.main-content {
+  grid-area: login;
+  width: 100% !important;
+  height: 100% !important;
+  display: flex;
+  /* flex-direction: column; */
+}
+.main-content .row {
+  margin: auto;
+}
+.main-image {
+  grid-area: logo;
+  width: 100% !important;
+}
+.main-image img {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Start by hiding the checkboxes*/
+input[type="checkbox"] {
+  visibility: hidden;
+  vertical-align: center;
+}
+
+input[type="checkbox"]:checked {
+  /*some code goes here */
+}
+.lembrar-me {
+  display: flex;
+  justify-content: flex-start;
+  /* padding: 1rem; */
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  align-items: center;
+  gap: 1rem;
+}
+/* .lembrar-me .checkbox-example {
+  translatey: -50%;
+  translatey: 50%;
+}
+.lembrar-me p {
+  translatey: -50%;
+  translatey: 50%;
+} */
+/* the slider bar */
+.lembrar-me .checkbox-example {
+  width: 45px;
+  background-color: red;
+  height: 15px;
+  background: rgb(255, 255, 255);
+  /* margin: 20px 80px; */
+  position: relative;
+  border-radius: 5px;
+  border: solid 1px #ccc;
+}
+
+/* the slider from the label */
+.lembrar-me .checkbox-example label {
+  display: block;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  transition: all 0.5s ease;
+  cursor: pointer;
+  position: absolute;
+  top: -2px;
+  left: -3px;
+  background: #ccc;
+}
+
+/* Move the slider if the checkbox is clicked */
+.lembrar-me .checkbox-example input[type="checkbox"]:checked + label {
+  left: 27px;
+  background: rgb(255, 217, 0);
+}
+
+.lembrar-me p {
+  /* display: flex; */
+  line-height: 15px;
+  text-align: center;
+  vertical-align: baseline;
+}
+
+@media (max-width: 768px) {
+  .main-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 15rem 1fr 1fr;
+
+    grid-template-areas:
+      "logo"
+      "login"
+      "login";
+  }
+  .main-image {
+    display: flex;
+    justify-content: center;
+  }
+  .main-image img {
+    width: 50% !important;
+    margin: 0 auto;
+    /* height: 50% !important; */
+  }
+}
