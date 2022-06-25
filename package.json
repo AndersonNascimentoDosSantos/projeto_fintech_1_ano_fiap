@@ -1,0 +1,20 @@
+{
+  "name": "projeto_fintech_1_ano_fiap",
+  "version": "1.0.0",
+  "description": "## Aplicativo fintech para gestao financeira",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx tailwindcss -i ./src/assets/css/custom/input.css -o ./src/assets/css/custom/output.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndersonNascimentoDosSantos/projeto_fintech_1_ano_fiap.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AndersonNascimentoDosSantos/projeto_fintech_1_ano_fiap/issues"
+  },
+  "homepage": "https://github.com/AndersonNascimentoDosSantos/projeto_fintech_1_ano_fiap#readme"
+}
