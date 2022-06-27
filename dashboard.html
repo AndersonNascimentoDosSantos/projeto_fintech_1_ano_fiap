@@ -1,24 +1,105 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard2</title>
+    <title>Dashboard</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="/assets/reset.css" />
-    <link rel="stylesheet" href="/assets/css/bootstrap.css" />
-    <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+
+    <!-- <link rel="stylesheet" href="/assets/reset.css" /> -->
+    <!-- <link rel="stylesheet" href="/assets/css/bootstrap.css" /> -->
+    <!-- <link rel="stylesheet" href="/assets/css/bootstrap.min.css" /> -->
     <link rel="stylesheet" href="/assets/dashboard.css" />
     <link rel="stylesheet" href="/assets/menu.css" />
+
+    <link rel="stylesheet" href="assets/header.css" />
+    <!-- <link rel="stylesheet" href="assets/reset.css"> -->
+    <link rel="stylesheet" href="assets/css/custom/modal.css" />
+    <link rel="stylesheet" href="assets/css/custom/dropdown_modal.css" />
+    <link
+      rel="stylesheet"
+      href="assets/css/custom/modal-despesa-resceita.css"
+    />
   </head>
   <body>
     <main>
+      <div class="despesa-receita-modal" id="cadastro-modal">
+        <div class="modal-content">
+          <span class="modal_close">&times;</span>
+          <div class="modal-despesa-receita-wrap" id="modal-wrap">
+            <div class="modal-despesa-receita">
+              <div class="box-left">
+                <div id="container-faturamento">
+                  <h2>Saldo</h2>
+                  <div id="faturamento"></div>
+                </div>
+                <form action="" onsubmit="saveAccounts">
+                  <label for="nome">Despesa ou receita:</label>
+                  <input
+                    type="text"
+                    id="nome"
+                    name="conta"
+                    placeholder="nome da transação"
+                    required
+                  />
+
+                  <label for="valor" id="info"
+                    >Valor:<span class="material-icons md-24 md-light"
+                      >info
+                    </span>
+                    <div class="redBubble bubblePosition hoverBubble">
+                      <div class="bubble-container">
+                        <h3>aviso</h3>
+                        <p>
+                          os valores positivos seram considerados receitas
+                          <br />e os<br />
+                          negativos despesas.
+                        </p>
+                      </div>
+                    </div>
+                  </label>
+                  <input
+                    type="number"
+                    name="valor"
+                    id="valor"
+                    placeholder="Ex: 230"
+                    required
+                  />
+
+                  <button type="submit">Registrar</button>
+                </form>
+              </div>
+
+              <div class="box-right">
+                <section id="container-saldos">
+                  <div id="creditos">
+                    <h3>Receitas</h3>
+                    <p></p>
+                  </div>
+                  <div id="debitos">
+                    <h3>Despesas</h3>
+                    <p></p>
+                  </div>
+                </section>
+
+                <section id="contas">
+                  <div class="conta"></div>
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="lateral">
         <div class="menu-wrap">
           <input type="checkbox" class="toggler" />
@@ -29,16 +110,22 @@
             <div>
               <ul>
                 <li class="btn btn-warning">
-                  <a href="#"> despesas</a>
+                  <a href="#" onclick="openModal()">
+                    <span class="material-icons md-48 md-dark">+</span
+                    >despesas</a
+                  >
                 </li>
                 <li class="btn btn-warning">
-                  <a href="#"> receitas</a>
+                  <a href="#" onclick="openModal()">
+                    <span class="material-icons md-48 md-dark">+</span>
+                    receitas</a
+                  >
                 </li>
                 <li class="btn btn-warning">
-                  <a href="#"> investimentos</a>
-                </li>
-                <li class="btn btn-warning">
-                  <a href="#"> cryptomoedas</a>
+                  <a href="#" onclick="openModal()">
+                    <span class="material-icons md-48 md-dark">+</span>
+                    investimentos</a
+                  >
                 </li>
               </ul>
             </div>
@@ -90,5 +177,7 @@
     <script src="/assets/js/popper.min.js"></script>
     <script src="/assets/js/chartjs.min.js"></script>
     <script defer src="/assets/js/custom/index.js"></script>
+    <script src="assets/js/custom/adiciona-despesa-receita.js"></script>
+    <!-- <script src="assets/js/custom/index.js"></script> -->
   </body>
 </html>
