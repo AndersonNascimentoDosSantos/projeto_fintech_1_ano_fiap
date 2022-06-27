@@ -1,0 +1,40 @@
+.header-container {
+  position: relative;
+  grid-area: header-menu;
+  display: flex;
+  justify-content: space-between;
+  min-height: 4rem;
+  width: 100%;
+  /* background-color: blueviolet; */
+}
+.header-container * {
+  text-decoration: none;
+}
+
+.header-container a div {
+  flex: 1 1 33%;
+  justify-content: center;
+  width: 100%;
+}
+.header-container > div {
+  margin-right: 1rem;
+}
+.header-container a:first-child {
+  margin-left: 1rem;
+}
+.header-container a div > ul {
+  list-style: none;
+}
+.header-container > .dropdown > .avatar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  /* text-decoration: none; */
+}
+
+/* @media (max-width: 650px) {
+  .modal-wrap * {
+    display: none;
+  }
+} */
