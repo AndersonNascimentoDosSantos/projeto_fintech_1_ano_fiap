@@ -4,6 +4,7 @@
   left: 0;
   z-index: 1;
 }
+
 .menu-wrap .toggler {
   position: absolute;
   top: 0;
@@ -103,7 +104,7 @@
   opacity: 0;
   transition: opacity 0.4s ease-in;
 }
-.menu ul {
+.menu > div > ul {
   display: flex;
   flex-direction: column;
   list-style: none;
@@ -111,12 +112,12 @@
   max-width: 100%;
   padding: 1rem;
 }
-.menu ul li {
+.menu > div > ul > li {
   max-width: 100%;
   /* float: left; */
 }
 
-.menu > div a {
+.menu > div > ul .btn > a {
   text-decoration: none;
   color: #fafafa;
   font-size: 1.2rem;
@@ -124,11 +125,25 @@
   transition: opacity 1s ease-in;
   text-transform: uppercase;
   /* text-align: left; */
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
 }
-.menu a:hover {
-  color: rgb(255, 8, 8);
+.menu > div li:hover {
+  border-color: white;
+  background-color: orange;
+  /* color: blue; */
   transition: color 0.3s ease-in;
 }
+/* .menu > div > ul > .btn-warning:hover {
+  border-color: white;
+  background-color: white;
+  color: blue;
+  transition: color 0.3s ease-in;
+} */
+/* .menu > div > ul > li:hover + a {
+  color: orange;
+} */
 
 /* Show Menu */
 .menu-wrap .toggler:checked ~ .menu {
@@ -143,6 +158,11 @@
 .menu-wrap .toggler:checked ~ .menu > div a {
   opacity: 1;
   transition: opacity 1s ease-in;
+}
+
+.menu > div > ul > li:hover > a > span {
+  transition: 0.8s;
+  transform: rotate(225deg);
 }
 
 @media (max-width: 500px) {
