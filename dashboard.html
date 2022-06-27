@@ -11,10 +11,8 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 
     <!-- <link rel="stylesheet" href="/assets/reset.css" /> -->
     <!-- <link rel="stylesheet" href="/assets/css/bootstrap.css" /> -->
@@ -26,10 +24,7 @@
     <!-- <link rel="stylesheet" href="assets/reset.css"> -->
     <link rel="stylesheet" href="assets/css/custom/modal.css" />
     <link rel="stylesheet" href="assets/css/custom/dropdown_modal.css" />
-    <link
-      rel="stylesheet"
-      href="assets/css/custom/modal-despesa-resceita.css"
-    />
+    <link rel="stylesheet" href="assets/css/custom/modal-despesa-resceita.css">
   </head>
   <body>
     <main>
@@ -52,17 +47,14 @@
                     placeholder="nome da transação"
                     required
                   />
-
+        
                   <label for="valor" id="info"
-                    >Valor:<span class="material-icons md-24 md-light"
-                      >info
-                    </span>
+                    >Valor:<span class="material-icons md-24 md-light">info </span>
                     <div class="redBubble bubblePosition hoverBubble">
                       <div class="bubble-container">
                         <h3>aviso</h3>
                         <p>
-                          os valores positivos seram considerados receitas
-                          <br />e os<br />
+                          os valores positivos seram considerados receitas <br />e os<br />
                           negativos despesas.
                         </p>
                       </div>
@@ -75,11 +67,11 @@
                     placeholder="Ex: 230"
                     required
                   />
-
+        
                   <button type="submit">Registrar</button>
                 </form>
               </div>
-
+        
               <div class="box-right">
                 <section id="container-saldos">
                   <div id="creditos">
@@ -91,13 +83,14 @@
                     <p></p>
                   </div>
                 </section>
-
+        
                 <section id="contas">
                   <div class="conta"></div>
                 </section>
               </div>
             </div>
           </div>
+         
         </div>
       </div>
       <div class="lateral">
@@ -110,23 +103,15 @@
             <div>
               <ul>
                 <li class="btn btn-warning">
-                  <a href="#" onclick="openModal()">
-                    <span class="material-icons md-48 md-dark">+</span
-                    >despesas</a
-                  >
+                  <a href="#" onclick="openModal()"> <span class="material-icons md-48 md-dark">+</span>despesas</a>
                 </li>
                 <li class="btn btn-warning">
-                  <a href="#" onclick="openModal()">
-                    <span class="material-icons md-48 md-dark">+</span>
-                    receitas</a
-                  >
+                  <a href="#" onclick="openModal()"> <span class="material-icons md-48 md-dark">+</span> receitas</a>
                 </li>
                 <li class="btn btn-warning">
-                  <a href="#" onclick="openModal()">
-                    <span class="material-icons md-48 md-dark">+</span>
-                    investimentos</a
-                  >
+                  <a href="#" onclick="openModal()"> <span class="material-icons md-48 md-dark">+</span> investimentos</a>
                 </li>
+                
               </ul>
             </div>
           </div>
@@ -134,6 +119,39 @@
       </div>
 
       <div class="container">
+        <header class="header-container">
+          <a href="#"></a>
+          <a class="modal-wrap" href="#">
+            <input type="checkbox" class="toggler" />
+            <div class="month">
+              <div id="current-month-top"></div>
+            </div>
+            <div class="month-mount-point">
+              <div>
+                <div class="modal-calendar">
+                  <div class="header-modal-calendar">
+                    <span><button class="material-icons md-48 md-dark" type="button ">chevron_left</button></span>
+                    <span id="current-month"></span>
+                    <span><button class="material-icons md-48 md-dark" type="button">chevron_right</button></span>
+                  </div>
+                  <div class="body-modal-calendar" id="body-modal"></div>
+                  <div class="footer-modal-calendar">
+                    <button type="button">CANCELAR</button>
+                    <button type="button">MÊS CORRENTE</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>     
+            <div  class="dropdown">
+              <a class="avatar" href="#" >                
+                <span class="material-icons md-48 md-dark">face</span>
+                <span>nome do usuario</span>
+              </a>
+             
+            </li>
+          </div>
+        </header>
         <div class="graficos">
           <div class="chart">
             <span>receitas</span>
@@ -169,10 +187,10 @@
       </div>
     </main>
     <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-      crossorigin="anonymous"
-    ></script>
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"
+  ></script>
     <script src="/assets/js/bootstrap.js"></script>
     <script src="/assets/js/popper.min.js"></script>
     <script src="/assets/js/chartjs.min.js"></script>
