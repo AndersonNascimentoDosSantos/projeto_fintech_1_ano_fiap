@@ -1,0 +1,140 @@
+:root {
+  --primary-color-button: rgba(177, 177, 177, 0.425);
+  --primary-color-button-hover: rgb(177, 177, 177);
+  --secundary-color: #f2c94c;
+  --danger-color: red;
+  --text-color: rgb(82, 82, 82);
+}
+
+.modal-calendar {
+  /* margin: uto; */
+  position: relative;
+  display: grid;
+  height: 20rem;
+  min-width: 25rem;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "header-m"
+    "body-m"
+    "modal-footer";
+  background: white;
+  border-radius: 32px;
+  padding-bottom: 1rem;
+  /* z-index: 10; */
+  /* background-color: blue; */
+}
+.header-modal-calendar {
+  grid-area: header-m;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--secundary-color);
+  border-top-right-radius: 32px;
+  border-top-left-radius: 32px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  opacity: 0.64;
+  /* background-color: aqua; */
+}
+.header-modal-calendar span {
+  /* flex: 1 1 33%; */
+  display: flex;
+  /* justify-content: center; */
+}
+.header-modal-calendar span:first-child {
+  margin-right: 40%;
+  /* margin-left: 0; */
+}
+.header-modal-calendar span:last-child {
+  margin-left: 40%;
+}
+
+/* .header-modal-calendar span {
+  padding: 0.5rem;
+} */
+.header-modal-calendar span button {
+  width: 2rem;
+  height: 2rem;
+  background-color: var(--secundary-color);
+  border: none;
+  border-radius: 100%;
+  box-shadow: none;
+  color: var(--text-color);
+  font-size: x-large;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.header-modal-calendar span button:hover {
+  background-color: var(--text-color);
+  color: var(--secundary-color);
+}
+
+.body-modal-calendar {
+  grid-area: body-m;
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+.body-modal-calendar span {
+  padding: 0.25rem;
+  flex: 1 1 28%;
+  /* border: solid 1px rgba(255, 255, 255, 0.425); */
+  border-radius: 8px;
+  text-align: center;
+  color: var(--text-color);
+  background-color: var(--primary-color-button);
+  text-transform: uppercase;
+}
+.body-modal-calendar span:hover {
+  background-color: var(--primary-color-button-hover);
+  color: white;
+}
+.body-modal-calendar .active {
+  background-color: var(--primary-color-button-hover);
+  color: white;
+}
+.body-modal-calendar .active:hover {
+  background-color: var(--text-color);
+  color: white;
+}
+.footer-modal-calendar {
+  grid-area: modal-footer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-bottom: 1rem;
+}
+.footer-modal-calendar button {
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem;
+  background-color: var(--secundary-color);
+  opacity: 0.74;
+  white-space: nowrap;
+}
+.footer-modal-calendar button:hover {
+  background-color: var(--secundary-color);
+  opacity: 1;
+}
+
+.footer-modal-calendar button:first-child {
+  background-color: var(--danger-color);
+  opacity: 0.74;
+  margin-right: 40%;
+}
+.footer-modal-calendar button:first-child:hover {
+  background-color: var(--danger-color);
+  opacity: 1;
+}

@@ -1,0 +1,319 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+/* modal popup */
+/* Modal Content */
+.despesa-receita-modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 100; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+.despesa-receita-modal .modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  height: 500px;
+  /* max-height: 50vh; */
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: 3rem 1fr;
+  grid-template-areas:
+    ". . . . . . . . . close"
+    "video video video video video video video video video video";
+}
+@media (max-width: 500px) {
+  .despesa-receita-modal .modal-content {
+    height: 50vh;
+  }
+}
+.despesa-receita-modal .modal-content #modal-wrap {
+  grid-area: video;
+}
+.despesa-receita-modal .modal-content .modal_close {
+  grid-area: close;
+  margin-left: auto;
+  color: #aaaaaa;
+  float: left;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.despesa-receita-modal .modal-content .modal_close:hover {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+.despesa-receita-modal .modal-content .modal_close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* modal interno */
+#info {
+  display: flex;
+  width: 25%;
+  /* padding: 20px; */
+  position: relative;
+  text-decoration: none;
+  /* background-color: aqua; */
+  /* vertical-align: baseline; */
+  align-items: center;
+}
+#info > span {
+  color: orange;
+}
+/* bubble style */
+.hoverBubble {
+  background: #333333;
+  color: #ffffff;
+  cursor: pointer;
+  opacity: 0;
+  padding: 5px;
+  position: absolute;
+  text-align: left;
+  visibility: hidden;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-transition: all 0.25s;
+  -moz-transition: all 0.25s;
+  -ms-transition: all 0.25s;
+  -o-transition: all 0.25s;
+  transition: all 0.25s;
+}
+
+.bubblePosition {
+  bottom: 115%;
+  height: inherit;
+  left: 0;
+  min-height: fit-content;
+  top: auto;
+  width: 160px;
+}
+
+.hoverBubble:after,
+.bubblePosition:after {
+  border: 8px solid transparent;
+  border-top-color: #333333;
+  bottom: -15px;
+  content: "";
+  height: 0px;
+  left: 0;
+  margin-left: 25%;
+  position: absolute;
+  right: 0;
+  width: 0px;
+}
+
+/* bubble hover */
+#info span:hover + .hoverBubble {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition: all 0.25s;
+  -moz-transition: all 0.25s;
+  -ms-transition: all 0.25s;
+  -o-transition: all 0.25s;
+  transition: all 0.25s;
+}
+/* content in the bubble */
+.hoverBubble .bubble-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  /* margin-top: 1rem; */
+}
+
+.hoverBubble .bubble-container p {
+  font-size: 0.9em;
+  text-align: justify;
+}
+
+.hoverBubble h3 {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+.redBubble h3,
+.redBubble i {
+  color: #b23333;
+}
+.modal-despesa-receita-wrap {
+  background: linear-gradient(
+    90deg,
+    rgb(255, 255, 255) 0%,
+    rgb(143, 143, 143) 42%,
+    rgb(48, 48, 48) 100%
+  );
+}
+.modal-despesa-receita {
+  width: fit-content;
+  height: fit-content;
+  background-color: white;
+  border-radius: 8px;
+  padding: 10px;
+  display: grid;
+  margin: 20px auto 10px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+}
+#faturamento {
+  min-width: 86px;
+  max-width: fit-content;
+  height: 30px;
+  border-radius: 8px;
+  padding: 7px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+#creditos,
+#debitos {
+  padding: 5px;
+  width: 135px;
+  border-radius: 8px;
+  text-align: center;
+  margin-bottom: 10px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+#faturamento,
+#creditos,
+#debitos {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.box-left,
+.box-right {
+  padding: 10px;
+}
+.box-right {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+.contas {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50%;
+  width: 50%;
+}
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+input {
+  margin-bottom: 10px;
+  padding: 5px;
+}
+form button {
+  display: block;
+  width: 247px;
+  height: 29px;
+}
+#container-saldos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-gap: 10px;
+}
+#contas {
+  width: 296px;
+  height: 100px;
+  margin-top: 10px;
+  padding: 6px;
+  box-shadow: 0px 4px 10px -5px rgb(0 0 0 / 75%);
+  overflow: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+}
+#contas p {
+  height: fit-content;
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 5px;
+  margin-bottom: 5px;
+  position: relative;
+  text-align: center;
+}
+#contas .conta-debito::before {
+  content: "";
+  right: 0px;
+  top: 0px;
+  border-right: 8px solid red;
+  height: -webkit-fill-available;
+  position: absolute;
+}
+#contas .conta-credito::before {
+  content: "";
+  right: 0px;
+  top: 0px;
+  border-right: 8px solid blue;
+  height: -webkit-fill-available;
+  position: absolute;
+}
+.box-conta img {
+  transition: all 400ms ease;
+}
+.box-conta img:hover {
+  transform: translateY(-1px);
+  opacity: 0.8;
+}
+
+@media (max-width: 767px) {
+  .modal-despesa-receita {
+    display: flex;
+    flex-direction: column-reverse;
+    width: fit-content;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    display: flex;
+  }
+
+  .modal-despesa-receita {
+    display: flex;
+    flex-direction: column-reverse;
+    width: fit-content;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .box-right {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+
+  #debitos,
+  #creditos {
+    width: fit-content;
+    min-width: 112px;
+  }
+
+  #contas {
+    width: 100%;
+  }
+
+  form button {
+    width: 100%;
+  }
+}
