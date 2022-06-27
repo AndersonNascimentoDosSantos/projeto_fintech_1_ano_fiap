@@ -93,13 +93,77 @@ function geraGrafico(ctx, data, label) {
     },
   });
 }
-var ctx1 = document.getElementById("chart-line-receitas").getContext("2d");
-var ctx2 = document.getElementById("chart-line-despesas").getContext("2d");
-var ctx3 = document.getElementById("chart-line-investimentos").getContext("2d");
-var data_ctx1 = [50, 40, 100, 250, 400, 300, 100, 130, 50];
-var data_ctx2 = [150, 640, 200, 150, 500, 100, 600, 1130, 750];
-var data_ctx3 = [110, 140, 210, 150, 40, 100, 10, 30, 50];
+try {
+  var ctx1 = document.getElementById("chart-line-receitas").getContext("2d");
+  var ctx2 = document.getElementById("chart-line-despesas").getContext("2d");
+  var ctx3 = document
+    .getElementById("chart-line-investimentos")
+    .getContext("2d");
+  var data_ctx1 = [50, 40, 100, 250, 400, 300, 100, 130, 50];
+  var data_ctx2 = [150, 640, 200, 150, 500, 100, 600, 1130, 750];
+  var data_ctx3 = [110, 140, 210, 150, 40, 100, 10, 30, 50];
 
-geraGrafico(ctx1, data_ctx1, "despesas");
-geraGrafico(ctx2, data_ctx2, "receitas");
-geraGrafico(ctx3, data_ctx3, "investimentos");
+  geraGrafico(ctx1, data_ctx1, "despesas");
+  geraGrafico(ctx2, data_ctx2, "receitas");
+  geraGrafico(ctx3, data_ctx3, "investimentos");
+} catch (err) {}
+
+const bodyModal = document.getElementById("body-modal");
+const currentMonth = document.getElementById("current-month");
+const currentMonthTop = document.getElementById("current-month-top");
+const newDate = new Date(Date.now());
+const months = [
+  "janeiro",
+  "feveiro",
+  "março",
+  "abril",
+  "maio",
+  "junho",
+  "julho",
+  "agosto",
+  "setembro",
+  "outubro",
+  "novembro",
+  "dezembro",
+];
+const monthsReduzed = [
+  "jan",
+  "fev",
+  "mar",
+  "abr",
+  "mai",
+  "jun",
+  "jul",
+  "ago",
+  "set",
+  "out",
+  "nov",
+  "dez",
+];
+currentMonth.innerText = monthsReduzed[newDate.getMonth()];
+currentMonthTop.innerText = months[newDate.getMonth()];
+//   console.log(newDate.getMonth());
+monthsReduzed.map(function (element, index) {
+  const span = document.createElement("span");
+  if (index == newDate.getMonth()) {
+    span.setAttribute("class", "active");
+  }
+  span.innerText = element;
+  bodyModal.appendChild(span);
+});
+
+function openModal() {
+  var modal = document.getElementById("cadastro-modal");
+  modal.style.display = "block";
+  var span = document.getElementsByClassName("modal_close")[0];
+  // When the user clicks on <span> (x), close the modal
+
+  span.onclick = function () {
+    modal.style.display = "none";
+  };
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  };
+}
