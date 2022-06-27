@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="/assets/css/custom/modal-despesa-resceita.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="modal-wrap">
+    <main class="modal-despesa-receita">
+      <div class="box-left">
+        <div id="container-faturamento">
+          <h2>Saldo</h2>
+          <div id="faturamento"></div>
+        </div>
+        <form action="" onsubmit="saveAccounts">
+          <label for="nome">Despesa ou receita:</label>
+          <input
+            type="text"
+            id="nome"
+            name="conta"
+            placeholder="nome da transação"
+            required
+          />
+
+          <label for="valor" id="info"
+            >Valor:<span class="material-icons md-24 md-light">info </span>
+            <div class="redBubble bubblePosition hoverBubble">
+              <div class="bubble-container">
+                <h3>aviso</h3>
+                <p>
+                  os valores positivos seram considerados receitas <br />e os<br />
+                  negativos despesas.
+                </p>
+              </div>
+            </div>
+          </label>
+          <input
+            type="number"
+            name="valor"
+            id="valor"
+            placeholder="Ex: 230"
+            required
+          />
+
+          <button type="submit">Registrar</button>
+        </form>
+      </div>
+
+      <div class="box-right">
+        <section id="container-saldos">
+          <div id="creditos">
+            <h3>Receitas</h3>
+            <p></p>
+          </div>
+          <div id="debitos">
+            <h3>Despesas</h3>
+            <p></p>
+          </div>
+        </section>
+
+        <section id="contas">
+          <div class="conta"></div>
+        </section>
+      </div>
+    </main>
+  </body>
+  <script src="/assets/js/custom/adiciona-despesa-receita.js"></script>
+</html>
