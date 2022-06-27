@@ -1,0 +1,128 @@
+html,
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.navWrapOuter {
+  display: table;
+  height: 100vh;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.navWrapInner {
+  display: table-cell;
+  vertical-align: bottom;
+  width: 100%;
+}
+
+/* navigation */
+ul.navUL {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+ul.navUL li {
+  display: inline-block;
+  width: 200px;
+}
+
+ul.navUL li a {
+  color: #ee0000;
+  display: block;
+  padding: 20px;
+  position: relative;
+  text-decoration: none;
+}
+
+/* bubble style */
+.hoverBubble {
+  background: #333333;
+  color: #ffffff;
+  cursor: pointer;
+  opacity: 0;
+  padding: 5px;
+  position: absolute;
+  text-align: left;
+  visibility: hidden;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-transition: all 0.25s;
+  -moz-transition: all 0.25s;
+  -ms-transition: all 0.25s;
+  -o-transition: all 0.25s;
+  transition: all 0.25s;
+}
+
+.bubblePosition {
+  bottom: 115%;
+  height: inherit;
+  left: 0;
+  min-height: 200px;
+  top: auto;
+  width: 190px;
+}
+
+.hoverBubble:after,
+.bubblePosition:after {
+  border: 8px solid transparent;
+  border-top-color: #333333;
+  bottom: -15px;
+  content: "";
+  height: 0px;
+  left: 0;
+  margin: 0 auto;
+  position: absolute;
+  right: 0;
+  width: 0px;
+}
+
+/* bubble hover */
+ul.navUL li a:hover .hoverBubble {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition: all 0.25s;
+  -moz-transition: all 0.25s;
+  -ms-transition: all 0.25s;
+  -o-transition: all 0.25s;
+  transition: all 0.25s;
+}
+
+/* content in the bubble */
+.hoverBubble i {
+  display: block;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.hoverBubble p {
+  font-size: 0.9em;
+  min-height: 100px;
+}
+
+.hoverBubble h3 {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.redBubble h3,
+.redBubble i {
+  color: #b23333;
+}
+
+.blueBubble h3,
+.blueBubble i {
+  color: #13708e;
+}
+
+.yellowBubble h3,
+.yellowBubble i {
+  color: #e8cd1a;
+}
