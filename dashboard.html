@@ -11,8 +11,7 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
+   
 
     <!-- <link rel="stylesheet" href="/assets/reset.css" /> -->
     <!-- <link rel="stylesheet" href="/assets/css/bootstrap.css" /> -->
@@ -25,6 +24,10 @@
     <link rel="stylesheet" href="assets/css/custom/modal.css" />
     <link rel="stylesheet" href="assets/css/custom/dropdown_modal.css" />
     <link rel="stylesheet" href="assets/css/custom/modal-despesa-resceita.css">
+    <link
+    href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet"
+  />
   </head>
   <body>
     <main>
@@ -72,22 +75,7 @@
                 </form>
               </div>
         
-              <div class="box-right">
-                <section id="container-saldos">
-                  <div id="creditos">
-                    <h3>Receitas</h3>
-                    <p></p>
-                  </div>
-                  <div id="debitos">
-                    <h3>Despesas</h3>
-                    <p></p>
-                  </div>
-                </section>
-        
-                <section id="contas">
-                  <div class="conta"></div>
-                </section>
-              </div>
+              
             </div>
           </div>
          
@@ -103,13 +91,14 @@
             <div>
               <ul>
                 <li class="btn btn-warning">
-                  <a href="#" onclick="openModal()"> <span class="material-icons md-48 md-dark">+</span>despesas</a>
+                 
+                  <a href="#" onclick="openModal()"> <span class="material-icons md-48 md-dark">add</span>despesas</a>
                 </li>
                 <li class="btn btn-warning">
-                  <a href="#" onclick="openModal()"> <span class="material-icons md-48 md-dark">+</span> receitas</a>
+                  <a href="#" onclick="openModal()"> <span class="material-icons md-48 md-dark">add</span> receitas</a>
                 </li>
                 <li class="btn btn-warning">
-                  <a href="#" onclick="openModal()"> <span class="material-icons md-48 md-dark">+</span> investimentos</a>
+                  <a href="#" onclick="openModal()"> <span class="material-icons md-48 md-dark">add</span> investimentos</a>
                 </li>
                 
               </ul>
@@ -118,7 +107,7 @@
         </div>
       </div>
 
-      <div class="container">
+      <div class="dashboard_container">
         <header class="header-container">
           <a href="#"></a>
           <a class="modal-wrap" href="#">
@@ -154,7 +143,15 @@
         </header>
         <div class="graficos">
           <div class="chart">
-            <span>receitas</span>
+            <div class="chart_header">
+              <div id="receitas">
+                <span class="material-icons md-48 md-dark" >
+                  arrow_circle_up
+                  </span>
+              </div>
+              <h3>receitas</h3>
+            </div>
+            
             <div class="graph-container">
               <canvas
                 id="chart-line-receitas"
@@ -164,7 +161,15 @@
             </div>
           </div>
           <div class="chart">
-            <span>despesas</span>
+            <div class="chart_header">
+              <div id="despesas">
+                <span class="material-icons md-48 md-dark" >
+                  arrow_circle_down
+                  </span>
+              </div>
+            <h3>despesas</h3>
+
+            </div>
             <div class="graph-container">
               <canvas
                 id="chart-line-despesas"
@@ -174,7 +179,16 @@
             </div>
           </div>
           <div class="chart">
-            <span>investimentos</span>
+            <div class="chart_header">
+              <div id="investimentos">
+                <span class="material-icons md-48 md-dark" >
+                  currency_exchange
+                  </span>
+              </div>
+            
+              <h3>investimentos</h3>
+            </div>
+           
             <div class="graph-container">
               <canvas
                 id="chart-line-investimentos"
@@ -183,7 +197,45 @@
               ></canvas>
             </div>
           </div>
+        </div>  
+        <div class="list_container">
+          <div class="list_item">
+            <div id="creditos">
+              <div>
+                <div>
+                  <span class="material-icons md-48 md-dark">swap_vert</span>
+                </div>
+              <h3>Receitas</h3>
+              </div>
+              <p></p>
+            </div>
+          </div>
+          <div class="list_item">
+            <div id="debitos">
+              <div>
+                <div>
+                  <span class="material-icons md-48 md-dark">swap_vert</span>
+                </div>
+              <h3>Despesas</h3>
+              </div>
+              <p></p>
+            </div>
+          </div>
+          <div class="list_item">
+            <section id="contas">
+              <div>
+                <div>
+                  <span class="material-icons md-48 md-dark">list</span>
+                </div>
+                <h3 >Transações </h3>
+              </div>
+              <div class="conta"></div>
+            </section>
+          </div>
         </div>
+        
+         
+        
       </div>
     </main>
     <script
