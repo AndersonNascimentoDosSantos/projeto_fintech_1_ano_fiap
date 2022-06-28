@@ -15,7 +15,7 @@ main {
 }
 .dashboard_container {
   grid-area: rigth;
-  background-color: tomato;
+  /* background-color: tomato; */
   height: 100%;
   width: 100%;
   display: grid;
