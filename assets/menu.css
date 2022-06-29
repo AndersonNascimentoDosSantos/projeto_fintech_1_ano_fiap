@@ -2,7 +2,8 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1;
+  z-index: 3;
+  /* background-color: blue; */
 }
 
 .menu-wrap .toggler {
@@ -88,6 +89,7 @@
   /* text-align: left; */
   opacity: 0;
   transition: all var(--menu-speed) ease;
+  z-index: -1;
 }
 .menu > div {
   position: relative;
@@ -165,8 +167,8 @@
   transform: rotate(225deg);
 }
 
-@media (max-width: 500px) {
+@media (max-width: 650px) {
   .menu-wrap .toggler:checked ~ .menu {
-    width: 65vw;
+    width: 60vw;
   }
 }

@@ -21,7 +21,7 @@ function getInformations() {
     return;
   }
 
-  const getValueModified = parseFloat($getValue.replace(".", ""));
+  const getValueModified = parseFloat($getValue);
   const formattingValues = new SaveAccounts(getValueModified, $getName);
 
   accounts.push(formattingValues);
@@ -44,17 +44,19 @@ class SaveAccounts {
 
     const boxConta = document.createElement("div");
     boxConta.classList.add("box-conta");
-    boxConta.style.cssText = `position: relative; z-index: 1;`;
+    // boxConta.style.cssText = `position: relative;`;
 
-    const imgTrash = document.createElement("img");
-    imgTrash.src = "/assets/image/lixeira.png";
-    imgTrash.alt = "ilustração lixeira";
-    imgTrash.style.cssText = `
-        position: absolute;
-        top: -2px;
-        left: 0px;
-        z-index: 2;
-        `;
+    const imgTrash = document.createElement("span");
+    imgTrash.setAttribute("class", "material-icons md-48 md-dark");
+    imgTrash.innerText = "delete";
+    // imgTrash.src = "/assets/image/lixeira.png";
+    // imgTrash.alt = "ilustração lixeira";
+    // imgTrash.style.cssText = `
+    //     position: absolute;
+    //     top: -2px;
+    //     left: 0px;
+    //     z-index: 2;
+    //     `;
 
     boxConta.appendChild(imgTrash);
 

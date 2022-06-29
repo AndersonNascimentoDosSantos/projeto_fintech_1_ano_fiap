@@ -18,7 +18,7 @@
   background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
 }
 .despesa-receita-modal .modal-content {
-  background-color: #fefefe;
+  background: #d6f5ff;
   margin: auto;
   padding: 20px;
   border: 1px solid #888;
@@ -33,10 +33,22 @@
     "video video video video video video video video video video";
 }
 @media (max-width: 500px) {
+  .despesa-receita-modal {
+    padding-top: 0;
+  }
   .despesa-receita-modal .modal-content {
-    height: 50vh;
+    height: 100%;
+    width: 100%;
+  }
+  .modal-despesa-receita {
+    margin: 0;
+  }
+  #contas .conta-debito,
+  #contas .conta-debito {
+    width: 100%;
   }
 }
+
 .despesa-receita-modal .modal-content #modal-wrap {
   grid-area: video;
 }
@@ -148,16 +160,9 @@
 }
 .redBubble h3,
 .redBubble i {
-  color: #b23333;
+  color: var(--secundary-color);
 }
-.modal-despesa-receita-wrap {
-  background: linear-gradient(
-    90deg,
-    rgb(255, 255, 255) 0%,
-    rgb(143, 143, 143) 42%,
-    rgb(48, 48, 48) 100%
-  );
-}
+
 .modal-despesa-receita {
   width: fit-content;
   height: fit-content;
@@ -218,11 +223,26 @@ label {
 input {
   margin-bottom: 10px;
   padding: 5px;
+  border-radius: 8px;
+  border: solid 1px black;
 }
 form button {
   display: block;
-  width: 247px;
+  width: 100%;
+  border: solid 1px black;
+  border-radius: 8px;
+  /* width: 247px; */
   height: 29px;
+  background-color: rgba(99, 99, 99, 0.2);
+  /* background: linear-gradient(
+    90deg,
+    rgb(255, 255, 255) 0%,
+    rgb(143, 143, 143) 42%,
+    rgb(48, 48, 48) 100%
+  ); */
+}
+form button:hover {
+  background-color: rgba(99, 99, 99, 0.74);
 }
 #container-saldos {
   display: grid;
@@ -231,46 +251,42 @@ form button {
   grid-gap: 10px;
 }
 #contas {
-  width: 296px;
-  height: 100px;
-  margin-top: 10px;
-  padding: 6px;
+  padding: 0.5rem;
   box-shadow: 0px 4px 10px -5px rgb(0 0 0 / 75%);
   overflow: auto;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto;
 }
-#contas p {
-  height: fit-content;
+
+#contas .conta-debito {
+  border-right: 8px solid red;
+}
+#contas .conta-credito {
+  border-right: 8px solid blue;
+}
+#contas .box-conta {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   border: 1px solid black;
   border-radius: 4px;
-  padding: 5px;
-  margin-bottom: 5px;
-  position: relative;
-  text-align: center;
+  justify-content: space-between;
+  max-height: 3rem;
 }
-#contas .conta-debito::before {
-  content: "";
-  right: 0px;
-  top: 0px;
-  border-right: 8px solid red;
-  height: -webkit-fill-available;
-  position: absolute;
+#contas .box-conta p {
+  width: 100%;
+  margin-bottom: 0;
+  text-align: right;
+  padding-right: 1rem;
 }
-#contas .conta-credito::before {
-  content: "";
-  right: 0px;
-  top: 0px;
-  border-right: 8px solid blue;
-  height: -webkit-fill-available;
-  position: absolute;
-}
-.box-conta img {
+#contas .box-conta span {
   transition: all 400ms ease;
+  font-size: 2rem;
 }
-.box-conta img:hover {
-  transform: translateY(-1px);
+
+#contas .box-conta span:hover {
+  transform: translateY(-4px);
   opacity: 0.8;
 }
 
