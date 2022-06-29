@@ -8,10 +8,11 @@ main {
   grid-template-areas: "left rigth";
   height: 100%;
   width: 100%;
+  padding-right: 1rem;
 }
 .lateral {
   grid-area: left;
-  background-color: blue;
+  /* background-color: blue; */
 }
 .dashboard_container {
   grid-area: rigth;
@@ -27,16 +28,23 @@ main {
     "outros outros outros outros outros outros";
   row-gap: 1rem;
 }
-
+.dashboard_container > .list_container,
 .dashboard_container > .graficos {
-  grid-area: graficos;
   display: flex;
   justify-content: space-around;
   gap: 1rem;
 }
+
+.dashboard_container > .list_container {
+  grid-area: outros;
+  margin-bottom: 1rem;
+}
+.dashboard_container > .graficos {
+  grid-area: graficos;
+}
 .dashboard_container > .list_container > .list_item,
 .dashboard_container > .graficos > .chart {
-  min-width: 30%;
+  min-width: 33%;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -116,22 +124,13 @@ main {
   text-transform: uppercase;
 }
 
-.dashboard_container > .list_container {
-  grid-area: outros;
-  /* background-color: blueviolet; */
-  display: flex;
-  justify-content: space-around;
-  gap: 1rem;
-  /* margin */
-}
-
 .dashboard_container > .list_container > .list_item > #contas {
   height: 100%;
   width: 100%;
 }
-.dashboard_container > .list_container > .list_item > #creditos > div,
-.dashboard_container > .list_container > .list_item > #debitos > div,
-.dashboard_container > .list_container > .list_item > #contas > div {
+.dashboard_container > .list_container > .list_item > #creditos > .conta_header,
+.dashboard_container > .list_container > .list_item > #debitos > .conta_header,
+.dashboard_container > .list_container > .list_item > #contas > .conta_header {
   display: flex;
   gap: 2rem;
   align-items: center;
@@ -139,9 +138,24 @@ main {
 }
 
 .dashboard_container > .graficos > .chart > .chart_header > h3,
-.dashboard_container > .list_container > .list_item > #creditos > div > h3,
-.dashboard_container > .list_container > .list_item > #debitos > div > h3,
-.dashboard_container > .list_container > .list_item > #contas > div > h3 {
+.dashboard_container
+  > .list_container
+  > .list_item
+  > #creditos
+  > .conta_header
+  > h3,
+.dashboard_container
+  > .list_container
+  > .list_item
+  > #debitos
+  > .conta_header
+  > h3,
+.dashboard_container
+  > .list_container
+  > .list_item
+  > #contas
+  > .conta_header
+  > h3 {
   text-transform: uppercase;
 }
 
@@ -165,17 +179,47 @@ main {
     margin-top: 1rem;
   }
   .dashboard_container > .graficos > .chart > .chart_header > h3,
-  .dashboard_container > .list_container > .list_item > #creditos > div > h3,
-  .dashboard_container > .list_container > .list_item > #debitos > div > h3,
-  .dashboard_container > .list_container > .list_item > #contas > div > h3 {
+  .dashboard_container
+    > .list_container
+    > .list_item
+    > #creditos
+    > .conta_header
+    > h3,
+  .dashboard_container
+    > .list_container
+    > .list_item
+    > #debitos
+    > .conta_header
+    > h3,
+  .dashboard_container
+    > .list_container
+    > .list_item
+    > #contas
+    > .conta_header
+    > h3 {
     font-size: initial;
   }
 }
 @media (max-width: 1010px) {
   .dashboard_container > .graficos > .chart > .chart_header > h3,
-  .dashboard_container > .list_container > .list_item > #creditos > div > h3,
-  .dashboard_container > .list_container > .list_item > #debitos > div > h3,
-  .dashboard_container > .list_container > .list_item > #contas > div > h3 {
+  .dashboard_container
+    > .list_container
+    > .list_item
+    > #creditos
+    > .conta_header
+    > h3,
+  .dashboard_container
+    > .list_container
+    > .list_item
+    > #debitos
+    > .conta_header
+    > h3,
+  .dashboard_container
+    > .list_container
+    > .list_item
+    > #contas
+    > .conta_header
+    > h3 {
     font-size: 1.5rem;
   }
 }
